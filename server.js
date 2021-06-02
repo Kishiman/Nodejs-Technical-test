@@ -1,5 +1,5 @@
-var app = require('./app');
 require('dotenv').config();
+var app = require('./app');
 const http = require('http');
 const IPLib = require('./lib/ip');
 var port = IPLib.port

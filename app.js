@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const _ = require('lodash');
 
+const TestRequestsLib = require('./lib/testRequests');
+
 app.use(cors())
 
 // enable files upload
@@ -27,7 +29,13 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(morgan('dev'));
+const testRequests = require("./testRequests")
+if (process.env.TEST_REQUESTS) {
+  console.log("PUBLIC_PATH", process.env.PUBLIC_PATH);
+  const filepath = process.env.PUBLIC_PATH + "/" + process.env.TEST_REQUESTS_OUT_FILE
+  TestRequestsLib.Test(testRequests, filepath)
 
+}
 
 /*
 this is the native MySQL connection

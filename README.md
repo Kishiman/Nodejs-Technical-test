@@ -9,7 +9,7 @@ Please clone this repository to have a minimal intial project.
 
 - An emplyee 'User' can have  multiple 'Mission's and a 'Mission' can be assigned to multiple emplyee 'User's. (CEO do not have missions). 
 
-- A 'Mission' is assigned to one 'Comapny' and can only be assigned to its employees.
+- A 'Mission' is assigned to one 'Comapny' and can only be assigned to its staffs.
 
 ##### Models
 ###### User
@@ -19,7 +19,7 @@ Please clone this repository to have a minimal intial project.
 - email (unique)
 - password
 - phoneNumber
-- parentCompany (if the user is an employee)
+- parentCompany (if the user is an staff)
 - ownedCompany (if the user is a CEO)
 - address
 - missions
@@ -28,12 +28,14 @@ Please clone this repository to have a minimal intial project.
 
 - name
 - ceo
-- employees
+- staffs
 - address
 
 ###### Address
 
 - fullAddress
+- state
+- country
 - zipCode
 - user (if address belongs to a user)
 - company (if address belongs to a company)
@@ -43,7 +45,7 @@ Please clone this repository to have a minimal intial project.
 - title
 - description
 - createdAt (autofill)
-- users
+- staffs
 - company
 
 ##### Validation
@@ -53,7 +55,10 @@ the 'testRequest.js' file contain a set of HTTP request that will be use to vali
 During validation process, we will run all request in order on an empty database, any failure in the chain may result in disruption of ids and thus causing a Domino effect.
 Please make sure you validate the whole level before moving to the next one.
 ###### Level 1
--  Implement basic CRUD (GET POST UPDATE) for all 4 models
+-  Implement basic CRUD (GET POST UPDATE) for all models
+
+###### Level 2
+-  Implement basic CRUD (GET POST UPDATE) for all models
 
 
 
