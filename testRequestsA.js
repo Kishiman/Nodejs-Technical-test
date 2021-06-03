@@ -2,8 +2,8 @@ module.exports = testRequest = [
     /// Level 1
     {
         message: "Create the first CEO User, John Doe",
-        path: "/api/User/Create",
         method: "post",
+        path: "/api/User/Create",
         body: {
             "firstname": "John",
             "lastname": "Doe",
@@ -14,8 +14,8 @@ module.exports = testRequest = [
     },
     {
         message: "Create the Address for John Doe",
-        path: "/api/Address/Create",
         method: "post",
+        path: "/api/Address/Create",
         body: {
             "fullAddress": "13 Walter Street,Silent Hill ",
             "state": "New England",
@@ -26,16 +26,16 @@ module.exports = testRequest = [
     },
     {
         message: "View the User of id 1, John Doe",
-        path: "/api/User",
         method: "post",
+        path: "/api/User",
         body: {
             "id": 1,
         }
     },
     {
         message: "Create the first Company, Outer Heaven",
-        path: "/api/Company/Create",
         method: "post",
+        path: "/api/Company/Create",
         body: {
             "name": "Outer Heaven",
             "ceoId": 1,
@@ -43,28 +43,28 @@ module.exports = testRequest = [
     },
     {
         message: "Create the Address for Outer Heaven",
-        path: "/api/Address/Create",
         method: "post",
+        path: "/api/Address/Create",
         body: {
             "fullAddress": "Silent Hill's amusement park",
             "state": "New England",
-            "country": "Zanzibar",
+            "country": "U.S.A",
             "zipCode": "3013",
             "companyId": 1,
         }
     },
     {
         message: "View the Company of id 1, Outer Heaven",
-        path: "/api/Company",
         method: "post",
+        path: "/api/Company",
         body: {
             "id": 1,
         }
     },
     {
         message: "Create the first Staff User, Kaz Miller",
-        path: "/api/User/Create",
         method: "post",
+        path: "/api/User/Create",
         body: {
             "firstname": "Kaz",
             "lastname": "Miller",
@@ -75,8 +75,8 @@ module.exports = testRequest = [
     },
     {
         message: "Create the second Staff User, Paz Ortega Andrade",
-        path: "/api/User/Create",
         method: "post",
+        path: "/api/User/Create",
         body: {
             "firstname": "Paz",
             "lastname": "Ortega Andrade",
@@ -86,9 +86,9 @@ module.exports = testRequest = [
         }
     },
     {
-        message: "Create the first Mission",
-        path: "/api/Mission/Create",
+        message: "Create the first Mission, Kaz needs Paz",
         method: "post",
+        path: "/api/Mission/Create",
         body: {
             "title": "Kaz needs Paz",
             "description": "Kaz, your mission is to escort Paz back to Mother Bade",
@@ -97,11 +97,30 @@ module.exports = testRequest = [
         }
     },
     {
-        message: "View the Mission of id 1, Kaz needs Paz",
-        path: "/api/Mission",
+        message: "Create the second Mission, Staff recruitement",
         method: "post",
+        path: "/api/Mission/Create",
+        body: {
+            "title": "Staff recruitement",
+            "description": "Kaz, you are need to recruit two more staff members",
+            "companyId": 1,
+            "staffsId":[2]
+        }
+    },
+    {
+        message: "View the Mission of id 1, Kaz needs Paz",
+        method: "post",
+        path: "/api/Mission",
         body: {
             "id": 1,
+        }
+    },
+    {
+        message: "View the Staff User of id 3, Paz Ortega Andrade",
+        method: "post",
+        path: "/api/User",
+        body: {
+            "id": 3,
         }
     },
 

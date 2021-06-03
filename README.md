@@ -49,16 +49,23 @@ Please clone this repository to have a minimal intial project.
 - company
 
 ##### Validation
-for the sake of test, all ids must be configured to be INTEGER AUTO INCREMENT
+- All ids must be configured to be INTEGER AUTO INCREMENT for the validation process
 
-the 'testRequest.js' file contain a set of HTTP request that will be use to validate the different levels of difficulty.
-During validation process, we will run all request in order on an empty database, any failure in the chain may result in disruption of ids and thus causing a Domino effect.
-Please make sure you validate the whole level before moving to the next one.
-###### Level 1
--  Implement basic CRUD (GET POST UPDATE) for all models
+- There are seperate 'testRequest' files describing differnt scenario with escalating levels of difficulty
+each 'testRequest' will have an array of HTTP Requests
 
-###### Level 2
--  Implement basic CRUD (GET POST UPDATE) for all models
+- some levels will require an empty Database, otherwise it will be dependednt on the previous level
+
+- You are allowed to modify the structure of any request body (keynames, object hierarchy etc), but never any of the data
+
+- There are multiple approches to design the database, it is recomended you read all test cases so that your conception is compatible with the requested specifications
+
+- You are required or expected to finish in the allocated time, we recomend you prioritize best practices over and implementing long term solutions 
+
+- It is recommended that you validate a level before moving to the next one.
+
+- You are encouragted engage with you supervisor for clarification, advice or help
+
 
 
 

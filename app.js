@@ -29,12 +29,34 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(morgan('dev'));
-const testRequests = require("./testRequests")
-if (process.env.TEST_REQUESTS) {
-  console.log("PUBLIC_PATH", process.env.PUBLIC_PATH);
-  const filepath = process.env.PUBLIC_PATH + "/" + process.env.TEST_REQUESTS_OUT_FILE
-  TestRequestsLib.Test(testRequests, filepath)
 
+const testRequestsA = require("./testRequestsA")
+const testRequestsB = require("./testRequestsB")
+const testRequestsC = require("./testRequestsC")
+
+if (process.env.TEST_REQUESTS) {
+  const promise = new Promise(async (resolve, reject) => {
+    //make sure the database is configured correctly before runing any test 
+
+    //Ready!
+    return resolve()
+  })
+    .then(async () => {
+
+      const filepath = process.env.PUBLIC_PATH + "/" + process.env.TEST_REQUESTS_OUT_FILE
+
+      //level 1
+      // await TestRequestsLib.Test(testRequestsA, filepath + "A.log")
+
+      //level 2
+      // await TestRequestsLib.Test(testRequestsB, filepath + "B.log")
+
+      //EMPTY DATBASE REQUIRED!
+
+      //level 3 (both tests)
+      // await TestRequestsLib.Test(testRequestsC, filepath + "C.log")
+      // await TestRequestsLib.Test(testRequestsB, filepath + "C_B.log")
+    })
 }
 
 /*
