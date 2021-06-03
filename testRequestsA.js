@@ -70,7 +70,7 @@ module.exports = testRequest = [
             "lastname": "Miller",
             "email": "kaz.miller@yopmail.com",
             "type": "Staff",
-            "companyId": 1,
+            "parentCompanyId": 1,
         }
     },
     {
@@ -82,7 +82,7 @@ module.exports = testRequest = [
             "lastname": "Ortega Andrade",
             "email": "paz.ortegaandrade@yopmail.com",
             "type": "Staff",
-            "companyId": 1,
+            "parentCompanyId": 1,
         }
     },
     {
